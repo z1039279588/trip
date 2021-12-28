@@ -1,6 +1,7 @@
 package cn.wolfcode.trip.web.controller;
 
 import cn.wolfcode.trip.common.JsonResult;
+import cn.wolfcode.trip.domain.LoginUserInfoVo;
 import cn.wolfcode.trip.domain.UserInfo;
 import cn.wolfcode.trip.domain.UserInfoVo;
 import cn.wolfcode.trip.service.IUserInfoService;
@@ -56,5 +57,11 @@ public class UserInfoController {
         }
         userInfoService.regist(userInfoVo);
         return JsonResult.success();
+    }
+
+    @PostMapping("login")
+    public JsonResult login(String username,String password){
+        LoginUserInfoVo loginUserInfoVo = userInfoService.login(username,password);
+    return JsonResult.success();
     }
 }
