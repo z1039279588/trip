@@ -62,6 +62,6 @@ public class UserInfoController {
     @PostMapping("login")
     public JsonResult login(String username,String password){
         LoginUserInfoVo loginUserInfoVo = userInfoService.login(username,password);
-    return JsonResult.success();
+        return JsonResult.success();
     }
 }
